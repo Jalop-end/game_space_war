@@ -1,0 +1,24 @@
+allprojects {
+    apply plugin: 'eclipse'
+    apply plugin: 'idea'
+}
+
+subprojects {
+    apply plugin: 'java-library'
+
+    java {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    version = '0.1.0'
+    ext {
+        appName = 'Space War'
+        gdxVersion = '1.13.1'
+    }
+
+    repositories {
+        mavenCentral()
+        maven { url 'https://s01.oss.sonatype.org' }
+    }
+}
